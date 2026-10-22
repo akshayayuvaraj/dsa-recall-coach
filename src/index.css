@@ -8,10 +8,24 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  color: #f2eff9;
-  background: #100f16;
+  color: #F5F3FF;
+  background: #090B18;
 
   --heading-font: 'Manrope', 'DM Sans', 'Segoe UI', sans-serif;
+  --color-purple: #A78BFA;
+  --color-purple-deep: #7C3AED;
+  --color-lavender: #C5A7FF;
+  --color-gold: #FFCB70;
+  --color-gold-deep: #E5A93D;
+  --color-background: #090B18;
+  --color-sidebar: #0F1020;
+  --color-card: #17152D;
+  --color-card-elevated: #211C3D;
+  --color-border: #302A49;
+  --color-text: #F5F3FF;
+  --color-text-secondary: #AAA6C5;
+  --color-success: #34D399;
+  --color-error: #FB7185;
 }
 
 * {
@@ -21,7 +35,7 @@
 html {
   min-width: 320px;
   min-height: 100%;
-  background: #100f16;
+  background: var(--color-background);
 }
 
 body {
@@ -58,5 +72,24 @@ h3 {
 
 ::selection {
   color: #fff;
-  background: #7450ae;
+  background: #7C3AED;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

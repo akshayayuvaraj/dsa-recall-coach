@@ -1,44 +1,48 @@
 .app-shell {
   color-scheme: dark;
-  --surface: #15131d;
-  --surface-raised: #1b1825;
-  --surface-soft: #211d2c;
-  --surface-hover: #282337;
-  --line: #2b2737;
-  --line-soft: #242130;
-  --text-main: #f2eff9;
-  --text-muted: #a19aad;
-  --text-soft: #706b7d;
-  --violet: #b694ff;
-  --violet-bright: #c3a7ff;
-  --violet-wash: rgba(164, 122, 255, 0.12);
-  --green: #7ccea9;
+  --surface: #0F1020;
+  --surface-raised: #17152D;
+  --surface-soft: #211C3D;
+  --surface-hover: #282343;
+  --line: #302A49;
+  --line-soft: #25213B;
+  --text-main: #F5F3FF;
+  --text-muted: #AAA6C5;
+  --text-soft: #85809F;
+  --violet: #A78BFA;
+  --violet-bright: #C5A7FF;
+  --violet-wash: rgba(167, 139, 250, 0.12);
+  --green: #34D399;
+  --gold: #FFCB70;
+  --gold-deep: #E5A93D;
   display: flex;
   min-height: 100vh;
   color: var(--text-main);
   background:
-    radial-gradient(ellipse at 76% -20%, rgba(98, 62, 151, 0.12), transparent 42%),
-    #100f16;
+    radial-gradient(ellipse at 76% -20%, rgba(124, 58, 237, 0.13), transparent 42%),
+    #090B18;
   font-size: 14px;
   transition: color 180ms ease, background-color 180ms ease;
 }
 
 .app-shell.theme-light {
   color-scheme: light;
-  --surface: #fff;
-  --surface-raised: #fff;
-  --surface-soft: #f7f5fb;
-  --surface-hover: #f1edf9;
-  --line: #e8e3ef;
-  --line-soft: #eeeaf4;
-  --text-main: #282333;
-  --text-muted: #716a7e;
-  --text-soft: #928a9e;
-  --violet: #7649ca;
-  --violet-bright: #7041c9;
-  --violet-wash: rgba(118, 73, 202, 0.1);
-  --green: #24885d;
-  background: #f6f4f9;
+  --surface: #F5F2FA;
+  --surface-raised: #FFFFFF;
+  --surface-soft: #EEE9F7;
+  --surface-hover: #E9E1F5;
+  --line: #DED5ED;
+  --line-soft: #EAE4F2;
+  --text-main: #28213A;
+  --text-muted: #655D76;
+  --text-soft: #817991;
+  --violet: #7041C9;
+  --violet-bright: #6033B5;
+  --violet-wash: rgba(112, 65, 201, 0.1);
+  --green: #168458;
+  --gold: #9A650B;
+  --gold-deep: #805107;
+  background: #F5F2FA;
 }
 
 .sidebar {
@@ -51,7 +55,7 @@
   height: 100vh;
   min-height: 620px;
   padding: 25px 15px 17px;
-  background: var(--surface);
+  background: color-mix(in srgb, var(--surface) 94%, #17152D);
   border-right: 1px solid var(--line);
   transition: flex-basis 200ms ease, width 200ms ease, padding 200ms ease;
 }
@@ -179,9 +183,10 @@
 }
 
 .nav-item--active {
-  color: var(--violet-bright);
-  background: var(--violet-wash);
-  border-color: rgba(166, 128, 239, 0.11);
+  color: #F5F3FF;
+  background: linear-gradient(112deg, rgba(124, 58, 237, 0.72), rgba(91, 54, 166, 0.48));
+  border-color: rgba(197, 167, 255, 0.26);
+  box-shadow: 0 7px 22px rgba(77, 43, 145, 0.2), inset 0 1px rgba(255, 255, 255, 0.07);
 }
 
 .nav-item--active::before {
@@ -637,12 +642,14 @@
   align-items: center;
   min-height: 252px;
   padding: 34px 42px;
-  overflow: hidden;
+  overflow: clip;
   background:
-    linear-gradient(110deg, rgba(40, 29, 61, 0.98) 0%, rgba(38, 29, 55, 0.96) 46%, rgba(33, 27, 49, 0.97) 100%);
-  border: 1px solid rgba(170, 139, 226, 0.17);
-  border-radius: 16px;
-  box-shadow: 0 18px 48px rgba(7, 5, 13, 0.13);
+    radial-gradient(ellipse at 88% 52%, rgba(255, 203, 112, 0.13), transparent 27%),
+    radial-gradient(ellipse at 72% 120%, rgba(124, 58, 237, 0.28), transparent 48%),
+    linear-gradient(112deg, #21183D 0%, #211A42 48%, #171936 100%);
+  border: 1px solid rgba(197, 167, 255, 0.22);
+  border-radius: 18px;
+  box-shadow: 0 22px 54px rgba(4, 3, 14, 0.28), inset 0 1px rgba(255, 255, 255, 0.04);
 }
 
 .theme-light .welcome-panel {
@@ -704,11 +711,13 @@
 }
 
 .welcome-panel h1 span {
-  color: #c5a7ff;
+  color: var(--gold);
+  text-shadow: 0 0 26px rgba(255, 203, 112, 0.16);
 }
 
 .theme-light .welcome-panel h1 span {
-  color: #7952bb;
+  color: #8A5A06;
+  text-shadow: none;
 }
 
 .welcome-content > p {
@@ -782,7 +791,7 @@
 
 .art-ring {
   position: absolute;
-  border: 1px solid rgba(199, 171, 255, 0.17);
+  border: 1px solid rgba(197, 167, 255, 0.22);
   border-radius: 50%;
 }
 
@@ -794,7 +803,7 @@
 .art-ring-two {
   width: 106px;
   height: 106px;
-  border-color: rgba(199, 171, 255, 0.24);
+  border-color: rgba(255, 203, 112, 0.32);
 }
 
 .art-center {
@@ -802,11 +811,11 @@
   width: 63px;
   height: 63px;
   place-items: center;
-  color: #e4d1ff;
-  background: radial-gradient(circle at 35% 25%, #9b75d5, #553b7e 76%);
-  border: 1px solid rgba(221, 197, 255, 0.35);
+  color: #FFCB70;
+  background: radial-gradient(circle at 35% 25%, #8059C7, #38275F 76%);
+  border: 1px solid rgba(255, 203, 112, 0.4);
   border-radius: 21px;
-  box-shadow: 0 0 40px rgba(150, 103, 222, 0.35);
+  box-shadow: 0 0 44px rgba(124, 58, 237, 0.38), 0 0 32px rgba(255, 203, 112, 0.1);
   transform: rotate(-8deg);
 }
 
@@ -814,9 +823,9 @@
   position: absolute;
   width: 6px;
   height: 6px;
-  background: #d8c2ff;
+  background: #FFCB70;
   border-radius: 50%;
-  box-shadow: 0 0 12px rgba(212, 183, 255, 0.8);
+  box-shadow: 0 0 12px rgba(255, 203, 112, 0.62);
 }
 
 .art-dot-one {
@@ -884,15 +893,19 @@
 .empty-card {
   min-height: 167px;
   padding: 16px 17px 13px;
-  background: var(--surface-raised);
+  background:
+    radial-gradient(ellipse at 100% 0, rgba(124, 58, 237, 0.055), transparent 45%),
+    var(--surface-raised);
   border: 1px solid var(--line);
-  border-radius: 11px;
-  transition: border-color 160ms ease, transform 160ms ease;
+  border-radius: 13px;
+  box-shadow: 0 8px 24px rgba(4, 3, 14, 0.12), inset 0 1px rgba(255, 255, 255, 0.025);
+  transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
 }
 
 .empty-card:hover {
-  border-color: color-mix(in srgb, var(--violet) 34%, var(--line));
-  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--violet) 52%, var(--line));
+  box-shadow: 0 13px 30px rgba(4, 3, 14, 0.2), 0 0 20px rgba(124, 58, 237, 0.08);
+  transform: translateY(-3px);
 }
 
 .empty-card-top {
@@ -905,8 +918,8 @@
   height: 33px;
   place-items: center;
   color: var(--violet);
-  background: var(--violet-wash);
-  border: 1px solid rgba(162, 125, 228, 0.1);
+  background: linear-gradient(145deg, rgba(124, 58, 237, 0.24), rgba(167, 139, 250, 0.1));
+  border: 1px solid rgba(167, 139, 250, 0.18);
   border-radius: 9px;
 }
 
@@ -1042,12 +1055,12 @@
 
 @media (max-width: 1050px) {
   .welcome-art {
-    right: 6%;
-    opacity: 0.72;
+    right: 2%;
+    opacity: 0.16;
   }
 
   .welcome-content {
-    max-width: 510px;
+    max-width: 430px;
   }
 }
 
@@ -1091,9 +1104,13 @@
     padding-inline: 30px;
   }
 
+  .card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .welcome-art {
     right: 1%;
-    opacity: 0.38;
+    opacity: 0.12;
   }
 }
 
